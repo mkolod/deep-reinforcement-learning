@@ -63,5 +63,5 @@ jupyter notebook Navigation.ipynb
 
 ## Demo of trained agent
 
-The inference video of the agent trained using the code in [Navigation.ipynb](./Navigation.ipynb) can be found [here](https://youtu.be/MEGWZeBNkKo)
+The inference video of the agent trained using the code in [Navigation.ipynb](./Navigation.ipynb) can be found [here](https://youtu.be/DZZhpnpUCPQ)
 
