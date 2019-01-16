@@ -29,6 +29,8 @@ The agent's [step](https://github.com/mkolod/deep-reinforcement-learning/blob/ma
 
 The [learn](https://github.com/mkolod/deep-reinforcement-learning/blob/master/p1_navigation/ddqn_agent.py#L80:L108) method implements Q learning, or in this case, double Q learning. We use the "local" DQN (the one most up to date) to get the argmax which represents the best action. Next, we use the "target" network to evaluate that action's expected reward. That becomes our target. The target network is updated using soft update, so it's stable across many learning steps. On the other hand, the local network is updated at every time step. When we get the difference between the target and predicted reward, we can compute the MSE loss and backpropagate to update the weights.
 
+Regarding hyperparameter tuning, I did some experiments. First, I thought that increasing the hidden states and adding dropout would improve the end result, but it wasn't significant and the training was considerably slower. Second, playing with the initial learning rate and other configuration parameter of the Adam optimizer might have helped, but the defaults worked well enough. Hence, the only thing that I did to improve the base model was making the DQN a double DQN, and adding batch normalization between the linear layers.
+
 ### Reward plot
 
 Here we can see the reward plot from a training session. The blue line represents instantaneous reward, while the orange line shows the 100-episode moving average. The latter is useful to see whether how the model is converging, because immediate reward is noisy. Note again that while the minimum 100-episode average to consider the environment solved is 13, I decided to train until 15. As we will see, the inference based on training to 15 doesn't seem to show overfitting.
@@ -37,16 +39,9 @@ Here we can see the reward plot from a training session. The blue line represent
 
 ### Ideas for future work
 
-There are several things that I would like to explore if given time. On the model side, even for the non-pixel version of the model, I think it would be good to see the impacts of prioritized experience replay
-Reward improvements:
+There are several things that I would like to explore if given time:
 
-- Prioritized experience replay
-- Dueling DQN
-- 
-
-Training performance improvements: 
-
-- multi-core CPU inference 
-- Batched GPU inference (training is already batched)
-- Larger batch training with warm-up, LARS/LARC, etc.
-- Deque is not that great for the buffer. For example, appending one more item will replace the last item inserted. It might be better to use a cache with random pops before inserting a new element
+1) For the non-pixel version of the model, I think it would be good to see the impacts of [prioritized experience replay](https://arxiv.org/abs/1511.05952) and [dueling DQNs](https://arxiv.org/abs/1511.06581).
+2) It would be good to build a model for the pixel version of the model, which is more like the original Atari DQN paper.
+3) On the systems side, currently the training step is done efficiently in batch mode, but inference is done with batch size 1. This is a problem because more parallelized implementations, whether CPU-based SIMD or on the GPU, will be hindered by inference performance. It might be reasonable for instance to start with inference of a batch greater than one, and at each step check which examples are no longer needed because the done state was reached for them. Also even in case of CPU inference, one could for instance use Python multi-processing to leverage the CPU better.
+4) I haven't done much in the way of hyperparameter sweeps, because the defaults from the lunar lander seemed to have worked well. With some sweeps, we could find hyperparameters that result in faster training.
