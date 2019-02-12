@@ -59,18 +59,19 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 
 The download URLs will depend on your system:
 
-    - **_Version 1: One (1) Agent_**
+- **_Version 1: One (1) Agent_**
         - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
         - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
         - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip)
         - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
 
-    - **_Version 2: Twenty (20) Agents_**
+- **_Version 2: Twenty (20) Agents_**
         - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
         - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
         - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
         - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
 
+To download the binary and place it in the correct location, do the following:
 ```
 cd $REPO_ROOT/p2_continuous-control
 wget $URL
@@ -87,4 +88,4 @@ jupyter notebook Continuous_Control.ipynb
 
 ### Instructions
 
-Evaluate the cells in [Continuous_Control.ipynb](./Continuous_Control.ipynb) to see the agent train and perform inference. Note that the notebook already contains the results of a successful session. The agent can be found in [ddpg_agent.py](./ddpg_agent.py), and the model can be found in [model.py](./model.py). 
+Evaluate the cells in`Continuous_Control.ipynb` to see the agent train and perform inference. Note that the notebook already contains the results of a successful session. 
