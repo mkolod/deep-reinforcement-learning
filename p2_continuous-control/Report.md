@@ -59,6 +59,10 @@ Here is the reward plot. As you can see, the convergence was not unstable as in 
 ![reward plot](./convergence.png)
 
 
+## Recording of trained actor playing
+
+You can see the video of trained actor that got checkpointed successfully playine [here](https://www.youtube.com/watch?v=EBTrjLHi-hU).
+
 ### Ideas for future work
 
 DDPG is by no means the only approach to deep reinforcement learning. If given more time, I would have liked to experiment with TNPG, RWR, REPS, TRPO, CEM, CMA-ES and other algorithms, which are compared [here](https://arxiv.org/abs/1604.06778). I could have also tried out PPO for continuous action spaces (see [here](https://blog.openai.com/openai-baselines-ppo/)). There are also even more recent approaches such as [D4PG](https://openreview.net/pdf?id=SyZipzbCb) worth exploring.
