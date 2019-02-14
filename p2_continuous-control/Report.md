@@ -61,7 +61,7 @@ Here is the reward plot. As you can see, the convergence was not unstable as in 
 
 ## Recording of trained actor playing
 
-You can see the video of trained actor that got checkpointed successfully playine [here](https://www.youtube.com/watch?v=EBTrjLHi-hU).
+You can see the video of trained actor that got checkpointed successfully playing [here](https://www.youtube.com/watch?v=EBTrjLHi-hU).
 
 ### Ideas for future work
 
