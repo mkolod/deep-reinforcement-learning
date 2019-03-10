@@ -26,7 +26,7 @@ The environment was solved using Multi-Agent Deep Deterministic Policy Gradient 
 
 ### Getting Started
 
-We will use the conda environment to ensure that the packages we are installing won't cause conflicts with the default system Python environment.
+We will use a conda environment to ensure that the packages we are installing won't cause conflicts with the default system Python environment.
 
 The following instructions presume that you have **conda** or **Anaconda** (conda plus an optimized Python build and pre-installed data science packages) installed. For more information, see [here](https://conda.io/docs/user-guide/install/index.html) for conda and [here](https://www.anaconda.com/download/) for Anaconda.
 
@@ -66,7 +66,7 @@ The download URLs will depend on your system:
 - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
     
 
-6. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/`
+6. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` subdirectory.
 
 To download the binary and place it in the correct location, do the following:
 ```
