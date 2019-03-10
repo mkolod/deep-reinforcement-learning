@@ -5,7 +5,7 @@ import random
 # from https://github.com/songrotek/DDPG/blob/master/ou_noise.py
 class OUNoise:
 
-    def __init__(self, action_dimension, seed=42, scale=0.1, mu=0, theta=0.15, sigma=0.2):
+    def __init__(self, action_dimension, seed=0, scale=0.1, mu=0, theta=0.15, sigma=0.2):
         np.random.seed(seed)
         self.action_dimension = action_dimension
         self.scale = scale
