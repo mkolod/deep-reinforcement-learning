@@ -22,6 +22,8 @@ The task is episodic, and in order to solve the environment, the agents must get
 
 The environment is considered solved, when the average (over 100 episodes) of those  **scores**  is at least +0.5.
 
+The environment was solved using Multi-Agent Deep Deterministic Policy Gradient (MADDPG). See the [paper](https://arxiv.org/pdf/1706.02275.pdf) for details.
+
 ### Getting Started
 
 We will use the conda environment to ensure that the packages we are installing won't cause conflicts with the default system Python environment.
