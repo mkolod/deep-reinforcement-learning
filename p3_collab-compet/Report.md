@@ -55,6 +55,8 @@ One thing that one can get confused about when trying to understand MADDG and si
 
 #### Model details
 
+Let's start with a single DDPG agent, and specifically its actor and critic. These are very simple and similar to the ones I had for problem 2 [here](https://github.com/mkolod/deep-reinforcement-learning/blob/master/p2_continuous-control/model.py). The agent used (code [here](https://github.com/mkolod/deep-reinforcement-learning/blob/master/p3_collab-compet/model.py#L16:L55)) is simply a multi-layer perceptron (MLP). It gets the Nx24 state vector, where N is the batch size and there are 24 observations of the environment at any given point. Instead of using leaky ReLU and Kaiming He's initialization like in problem 2, I opted for a simple MLP with ReLU and a basic fan-in initialization. Note though that after the first layer's affine transformation and nonlinearity, I added BatchNorm ([paper](https://arxiv.org/pdf/1502.03167.pdf)). This layer was added in order to minimize issues having to do with outputs of different magnitudes from the previous layer. BatchNorm tends to stabilize training and in some cases reduce overfitting. Since we want the actions to be in a narrow range, in this case between -1 and +1, the output non-linearity is a hyperbolic tangent (tanh). The critic ([code](https://github.com/mkolod/deep-reinforcement-learning/blob/master/p3_collab-compet/model.py#L58:L94)) is similarly straightforward. The only thing that we need to pay attention to in the critic is that we first need to concatenate the states provided (which includes both our current actor's observations, and other actors' observations) with the actor's actions. This is the coupling between the actor and the critic - the critic takes the environment state and the actor's actions and determines the cumulative reward the agent can expect.
+
 
 
 
@@ -77,3 +79,5 @@ Here is the plot of the scores. The scores look pretty small and constant for th
 ### Ideas for Future Work
 
 The submission has concrete future ideas for improving the agent's performance.
+
+
