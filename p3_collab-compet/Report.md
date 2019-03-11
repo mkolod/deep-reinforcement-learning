@@ -91,5 +91,5 @@ Here is the plot of the scores. The scores look pretty small and constant for th
 
 ### Ideas for Future Work
 
-The submission has concrete future ideas for improving the agent's performance.
+One thing that might be worth doing is a larger hyperparameter sweep. Once we have a converged model, could we have had fewer parameters, e.g. smaller hidden states in the actor and critic? After all, fast inference might be an important goal when a model goes into production, regardless of how long it took to train. More importantly though, it would have been nice to explore other model architectures and DRL algorithms for multi-agent settings, such as PS-TRPO. For a review of state-of-the-art multi-agent DRL algorithms addressing various issues such as continuous action spaces, non-stationarity, partial observability, etc., see [this](https://arxiv.org/pdf/1812.11794.pdf) literature survey paper.
 
