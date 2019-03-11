@@ -2,7 +2,7 @@
 
 [image1]: https://user-images.githubusercontent.com/10624937/42135623-e770e354-7d12-11e8-998d-29fc74429ca2.gif "Trained Agent"
 
-[image2]: https://github.com/mkolod/deep-reinforcement-learning/raw/master/p3_collab-compet/maddpg_scores.png "Agent Scores"
+[image2]: ./maddpg_scores.png "Agent Scores"
 
 ## Report regarding training of Multi-Agent Deep Deterministic Policy Gradient (MADDPG) Agent to Play Unity ML Agents' Tennis Environment
 
