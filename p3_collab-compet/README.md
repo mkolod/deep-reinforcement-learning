@@ -86,3 +86,8 @@ jupyter notebook Tennis.ipynb
 ### Instructions
 
 Evaluate the cells in`Tennis.ipynb` to see the agent train and perform inference. Note that the notebook already contains the results of a successful session.
+
+
+### Recorded Video
+
+You can see a sample of trained agents playing against each other [here](https://youtu.be/5gWjrZKlobg).
